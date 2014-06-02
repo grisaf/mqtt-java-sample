@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+archivesBaseName = 'MqttSample'
+
+version = '0.0.0.1'
+
+configurations {
+    provided
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.eclipse.org/content/repositories/paho-releases/' }
+}
+
+dependencies {
+    compile 'org.eclipse.paho:mqtt-client:0.4.0'
+    compile 'junit:junit:4.11'
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.6.Final'
+    compile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.6.Final'
+    compile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.6.Final'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+}
